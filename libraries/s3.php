@@ -1,5 +1,7 @@
 <?php
 /**
+* $Id$
+*
 * Copyright (c) 2011, Donovan Schönknecht.  All rights reserved.
 *
 * Redistribution and use in source and binary forms, with or without
@@ -581,7 +583,7 @@ class S3
 	* @param mixed $saveTo Filename or resource to write to
 	* @return mixed
 	*/
-	public static function getObject($bucket, $uri = '', $saveTo = false)
+	public static function getObject($bucket, $uri, $saveTo = false)
 	{
 		$rest = new S3Request('GET', $bucket, $uri, self::$endpoint);
 		if ($saveTo !== false)
@@ -1570,7 +1572,7 @@ class S3
 
 		// If anyone is still using mime_content_type()
 		} elseif (function_exists('mime_content_type'))
-			$type = trim(@mime_content_type($file));
+			$type = trim(mime_content_type($file));
 
 		if ($type !== false && strlen($type) > 0) return $type;
 
