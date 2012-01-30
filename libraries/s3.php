@@ -68,9 +68,7 @@ class S3
 	/**
 	* Constructor - if you're not using the class statically
 	*
-	* @param string $accessKey Access key
-	* @param string $secretKey Secret key
-	* @param boolean $useSSL Enable SSL
+	* @param array configuration
 	* @return void
 	*/
 	public function __construct($config = array())
@@ -82,7 +80,7 @@ class S3
 	/**
 	 * CodeIgniter support
 	 * 
-	 * @param array
+	 * @param array configuration
 	 * @return void
 	 */
 	public function initialize($config) {
