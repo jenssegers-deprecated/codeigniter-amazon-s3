@@ -73,6 +73,11 @@ class S3
 	*/
 	public function __construct($config = array())
 	{
+		if (empty($config)) {
+			get_instance()->config->load('s3', TRUE);
+			$config = get_instance()->config->item('s3');
+		}
+	
 	    $this->initialize($config);
 	}
 	
