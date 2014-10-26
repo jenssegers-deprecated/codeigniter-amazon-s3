@@ -2,7 +2,7 @@
 /**
 * $Id$
 *
-* Copyright (c) 2011, Donovan Schönknecht.  All rights reserved.
+* Copyright (c) 2011, Donovan SchÃ¶nknecht.  All rights reserved.
 *
 * Redistribution and use in source and binary forms, with or without
 * modification, are permitted provided that the following conditions are met:
@@ -91,12 +91,12 @@ class S3
 	public function initialize($config) {
 	    foreach ($config as $key => $val) {
 		    if(!in_array($key, array('accessKey', 'secretKey'))) {
-			    self::$key = $val;
+			    self::$$key = $val;
 		    }
 		}
 		
 		if (isset($config["accessKey"]) && isset($config["secretKey"]))
-			self::setAuth($this->accessKey, $this->secretKey);
+			self::setAuth($config["accessKey"], $config["secretKey"]);
 	}
 
 
